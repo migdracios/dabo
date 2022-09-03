@@ -24,3 +24,7 @@
 - Python, Github 코드/커밋메시지 컨벤션 유지
 - Docker를 활용한 개발 환경 구축 및 컨테이너를 통한 로컬에서 통합환경 테스트 진행
 - Django Test 코드를 활용한 Git Action CI/CD 지속적 빌드
+
+# ERD
+
+## [🚩LINK](https://github.com/migdracios/dabo/wiki/%EB%8B%A4%EB%B3%B4-ERD)
