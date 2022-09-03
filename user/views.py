@@ -9,6 +9,8 @@ from rest_framework.response import Response
 class SignView(APIView):
     # 회원가입
     def post(self, request):
+        user = request.user
+        # signup_serializer =
         return Response({})
 
     # 회원수정

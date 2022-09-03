@@ -20,7 +20,7 @@ class UserManager(BaseUserManager):
         user = self.create_user(
             username=username,
             password=password,
-            nickename=nickname
+            nickname=nickname
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -28,16 +28,15 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    username: models.CharField("사용자 아이디", max_length=20, unique=True)
-    password: models.CharField("사용자 비밀번호", max_length=256)
-    nickname: models.CharField("사용자 닉네임", max_length=20, unique=True)
-    created_at: models.DateTimeField("사용자 계정 생성일자", auto_now_add=True)
+    username = models.CharField("사용자 아이디", max_length=20, unique=True)
+    password = models.CharField("사용자 비밀번호", max_length=256)
+    nickname = models.CharField("사용자 닉네임", max_length=20, unique=True)
+    created_at = models.DateTimeField("사용자 계정 생성일자", auto_now_add=True)
 
-    is_active: models.BooleanField("사용자 활성상태", default=True)
-    is_admin: models.BooleanField("관리자 계정", default=False)
+    is_active = models.BooleanField("사용자 활성상태", default=True)
+    is_admin = models.BooleanField("관리자 계정", default=False)
 
     USERNAME_FIELD = "username"
-
     REQUIRED_FIELDS = ["nickname"]
 
     objects = UserManager()
